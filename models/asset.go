@@ -206,18 +206,18 @@ func (ck *JdCookie) Query() string {
 		msgs = append(msgs, fmt.Sprintf("极速金币：%d(≈%.2f元)💰", gn, float64(gn)/10000))
 		zjbn := <-zjb
 		if zjbn != 0 {
-			msgs = append(msgs, fmt.Sprintf("京东赚赚：%d金币(≈%.2f元)💰", zjbn, float64(zjbn)/10000))
+			msgs = append(msgs, fmt.Sprintf("京东赚赚：%d金币(≈%.2f元)", zjbn, float64(zjbn)/10000))
 		} else {
 			msgs = append(msgs, fmt.Sprintf("京东赚赚：暂无数据"))
 		}
 		mmcCoin := <-mmc
 		if mmcCoin != 0 {
-			msgs = append(msgs, fmt.Sprintf("京东秒杀：%d秒秒币(≈%.2f元)💰", mmcCoin, float64(mmcCoin)/1000))
+			msgs = append(msgs, fmt.Sprintf("京东秒杀：%d秒秒币(≈%.2f元)", mmcCoin, float64(mmcCoin)/1000))
 		} else {
 			msgs = append(msgs, fmt.Sprintf("京东秒杀：暂无数据"))
 		}
 		msgs = append(msgs, fmt.Sprintf("推一推券：%s", <-tyt))
-		msgs = append(msgs, fmt.Sprintf("惊喜牧场：%d枚鸡蛋🥚", <-egg))
+		msgs = append(msgs, fmt.Sprintf("惊喜牧场：%d枚鸡蛋", <-egg))
 
 	} else {
 		msgs = append(msgs, []string{
